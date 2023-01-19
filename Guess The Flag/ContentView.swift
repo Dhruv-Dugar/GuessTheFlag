@@ -16,12 +16,15 @@ struct ContentView: View {
     
     @State private var correctAnswer = Int.random(in: 0...2)
     
+    @State private var score = 0
+    
     
     var body: some View{
         ZStack{
             
+//            RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .top, startRadius: 20, endRadius: 200).ignoresSafeArea()
             
-            RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .top, startRadius: 20, endRadius: 200).ignoresSafeArea()
+            LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
             
             VStack(spacing: 30) {
                 VStack {
@@ -41,7 +44,7 @@ struct ContentView: View {
                     } label: {
                         Image(countries[number])
                             .renderingMode(.original)
-                            .clipShape(Circle())
+                            .clipShape(Capsule())
                             .shadow(radius: 5)
                     }
                 }
