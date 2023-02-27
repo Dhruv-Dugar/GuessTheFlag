@@ -20,13 +20,13 @@ struct ContentView: View {
     
     
     var body: some View{
-        ZStack{
+        NavigationView{ZStack{
             
             RadialGradient(stops: [
                 .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
                 .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3),
             ], center: .top, startRadius: 200, endRadius: 400)
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             
             
             VStack{
@@ -50,7 +50,7 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button{
-//                            flagTapped(number: number)
+                            //                            flagTapped(number: number)
                         } label: {
                             VStack{
                                 NavigationLink(destination: Maybe(), label: {
@@ -61,7 +61,7 @@ struct ContentView: View {
                                             .shadow(radius: 5)
                                         Text("Hi?")
                                     }
-
+                                    
                                 })
                                 
                             }
@@ -89,6 +89,8 @@ struct ContentView: View {
             Button("Continue", action: askQuestions)
         } message: {
             Text("Your score is \(score)")
+        }
+            
         }
     }
     
