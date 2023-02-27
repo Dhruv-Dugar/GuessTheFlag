@@ -50,12 +50,21 @@ struct ContentView: View {
                     
                     ForEach(0..<3) { number in
                         Button{
-                            flagTapped(number: number)
+//                            flagTapped(number: number)
                         } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
+                            VStack{
+                                NavigationLink(destination: Maybe(), label: {
+                                    VStack{
+                                        Image(countries[number])
+                                            .renderingMode(.original)
+                                            .clipShape(Capsule())
+                                            .shadow(radius: 5)
+                                        Text("Hi?")
+                                    }
+
+                                })
+                                
+                            }
                         }
                     }
                 }
